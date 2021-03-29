@@ -29,8 +29,6 @@ function SignupFormPage() {
   };
 
   return (
-    <div>
-    <iframe src="https://open.spotify.com/embed/playlist/1hFmRrK108eFr8lIPdn9WL" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
     <form onSubmit={handleSubmit}>
       <ul>
         {errors.map((error, idx) => <li key={idx}>{error}</li>)}
@@ -73,7 +71,6 @@ function SignupFormPage() {
       </label>
       <button type="submit">Sign Up</button>
     </form>
-    </div>
   );
 }
 
