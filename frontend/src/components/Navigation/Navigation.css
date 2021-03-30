@@ -1,16 +1,73 @@
 .navigation-bar {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-between;
+  align-items: center;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  border-bottom: solid 1px black;
+  padding: 5px;
+  margin-bottom: 5px;
 }
 
-#website-name {
-  font-family:Georgia, 'Times New Roman', Times, serif;
-  font-size: 30px;
-  text-decoration: none;
-  color: #40A1C3
+.website-name-icon {
+  margin-left: 100px;
 }
 
 #book-icon {
   height: 30px;;
+}
+
+#website-name {
+  font-size: 30px;
+  text-decoration: none;
+  color: #40A1C3;
+}
+
+.not-logged-nav {
+  display: flex;
+  flex-direction: row;
+}
+
+.top-link {
+  margin: 0 10px 0 10px;
+  text-decoration: none;
+  color: black
+}
+
+.user-dropdown {
+  margin-right: 100px;
+  display: flex;
+}
+
+.profile-dropdown {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 12px;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  align-self: flex-start;
+  justify-content: flex-start;
+  margin-left: 10px;
+}
+
+.user-button {
+  background-color: #76d6b0;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-right: 10px;
+  padding-left: 10px;
+  border: solid 3px black ;
+  border-radius: 10px;
+}
+
+button:focus {outline:0;}
+
+#logout-button {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  margin-top: -10px;
+  width: 70px;
+  font-size: 11px;
+  border: solid 1px black;
+  background-color: #99CDDF;
+  margin-bottom: 5px;
 }

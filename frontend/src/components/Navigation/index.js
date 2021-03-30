@@ -15,20 +15,22 @@ function Navigation({ isLoaded }){
     );
   } else {
     sessionLinks = (
-      <div className="new-user-nav">
-          <NavLink to="/login">Log In</NavLink>
-          <NavLink to="/signup">Sign Up</NavLink>
+      <div className="not-logged-nav">
+          <NavLink to="/login" className="top-link">Log In</NavLink>
+          <NavLink to="/signup" className="top-link">Sign Up</NavLink>
       </div>
     );
   }
 
   return (
     <div className='navigation-bar'>
-      <div>
+      <div className='website-name-icon'>
         <img src={music} id="book-icon"></img>
         <NavLink exact to="/" id="website-name">booktracks</NavLink>
       </div>
+      <div className="not-logged-nav">
         {isLoaded && sessionLinks}
+      </div>
     </div>
   );
 }
