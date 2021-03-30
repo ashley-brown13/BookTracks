@@ -15,7 +15,14 @@ const BookPage = () => {
   return (
     <div>
       {book &&
-        <h2>{book.title}</h2>
+        <div>
+          <img src={book.imageURL}></img>
+          <h2>{book.title}</h2>
+          <h3>{book.author}</h3>
+          <button>
+            <a href={book.googleLink} target="_blank">More Info</a>
+          </button>
+        </div>
       }
     </div>
   )

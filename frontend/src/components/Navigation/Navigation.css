@@ -1,0 +1,16 @@
+.navigation-bar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+#website-name {
+  font-family:Georgia, 'Times New Roman', Times, serif;
+  font-size: 30px;
+  text-decoration: none;
+  color: #40A1C3
+}
+
+#book-icon {
+  height: 30px;;
+}
