@@ -1,0 +1,56 @@
+.signup-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.signup-form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  align-content: center;
+  width: 400px;
+  padding-left: 60px;
+  padding-right: 100px;
+  align-content: flex-end;
+  border-top: 2px dotted gray;
+  font-size: 13px;
+}
+
+.signup-input-label-field {
+  margin: 10px;
+}
+
+.signup-input {
+  width: 200px;
+  margin-left: 20px;
+  height: 20px;
+}
+
+.signup-submit {
+  margin-right: 10px;
+  width: 207px;
+  height: 30px;
+  margin-top: 10px;
+  background-color: #A1C340;
+  opacity: .8;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  border: 1px solid black;
+}
+
+.check-for-account-container {
+  margin-top: 40px;
+  display: flex;
+  align-items: center;
+  font-size: 11px;
+}
+
+#account-par {
+  margin-right: 3px;
+}
+
+#account-a {
+  text-decoration: none;
+  color: #40A1C3;
+}

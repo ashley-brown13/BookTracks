@@ -6,7 +6,7 @@
   font-family: Georgia, 'Times New Roman', Times, serif;
   border-bottom: solid 1px black;
   padding: 5px;
-  margin-bottom: 5px;
+  margin-bottom: 15px;
 }
 
 .website-name-icon {
@@ -51,7 +51,8 @@
 }
 
 .user-button {
-  background-color: #76d6b0;
+  background-color: #A1C340;
+  opacity: .8;
   padding-top: 5px;
   padding-bottom: 5px;
   padding-right: 10px;
@@ -69,5 +70,6 @@ button:focus {outline:0;}
   font-size: 11px;
   border: solid 1px black;
   background-color: #99CDDF;
+  opacity: .8;
   margin-bottom: 5px;
 }

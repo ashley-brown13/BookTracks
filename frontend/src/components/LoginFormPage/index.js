@@ -26,30 +26,46 @@ function LoginFormPage() {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
-      <ul>
-        {errors.map((error, idx) => <li key={idx}>{error}</li>)}
-      </ul>
-      <label>
-        Username or Email
-        <input
-          type="text"
-          value={credential}
-          onChange={(e) => setCredential(e.target.value)}
-          required
-        />
-      </label>
-      <label>
-        Password
-        <input
-          type="password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          required
-        />
-      </label>
-      <button type="submit">Log In</button>
-    </form>
+    <div className="login-page">
+      <h4>Log in</h4>
+      <form onSubmit={handleSubmit} className="login-form">
+        <ul>
+          {errors.map((error, idx) => <li key={idx}>{error}</li>)}
+        </ul>
+        <div className="login-input-label-field">
+          <label>
+            Username / Email
+            <input
+              className="login-input"
+              type="text"
+              value={credential}
+              onChange={(e) => setCredential(e.target.value)}
+              required
+            />
+          </label>
+        </div>
+        <div className="login-input-label-field">
+        <label>
+            Password
+            <input
+              className="login-input"
+              type="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              required
+            />
+          </label>
+        </div>
+        <button type="submit" className="login-submit">Log In</button>
+        <div className="demo-container">
+          <p>Want to check out the site as a user?</p>
+          <button className="demo-button" onClick={(e) => {
+            setCredential("Demo-lition")
+            setPassword("password")
+          }}>Demo Login</button>
+        </div>
+      </form>
+    </div>
   );
 }
 
