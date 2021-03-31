@@ -8,7 +8,7 @@ module.exports = {
        "title": "Twilight Vibes",
        "description": "Only the rainy songs",
        "spotifyLink": 'https://open.spotify.com/playlist/3J9YUqDKzAxaEGECSsg25L?si=CXKFMlNnReGsgZv5N3Ci9g',
-       "imageURL": 'https://survivalcommonsense.com/wp-content/uploads/2014/05/rainy-weather-in-forest--600x300.jpg',
+       "imageURL": 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Old-black-appalachian-trail-tnnc1.jpg/1200px-Old-black-appalachian-trail-tnnc1.jpg',
        "bookId": 90,
        "userId": 7,
        "createdAt": new Date(),

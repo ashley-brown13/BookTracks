@@ -5,7 +5,6 @@ const { Book, Playlist, User } = require('../../db/models');
 const router = express.Router();
 
 router.get('/:bookId', asyncHandler(async function(req, res) {
-  console.log(req.params.bookId)
   const book = await Book.findByPk(req.params.bookId);
   return res.json(book);
 }));
