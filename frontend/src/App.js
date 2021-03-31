@@ -4,6 +4,7 @@ import { Route, Switch } from "react-router-dom";
 import LoginFormPage from "./components/LoginFormPage";
 import SignupFormPage from "./components/SignupFormPage";
 import BookPage from "./components/BookPage"
+import PlaylistPage from './components/PlaylistPage'
 import * as sessionActions from "./store/session";
 import Navigation from "./components/Navigation";
 
@@ -27,6 +28,9 @@ function App() {
           </Route>
           <Route path="/books/:bookId">
             <BookPage />
+          </Route>
+          <Route path="/playlists/:playlistId">
+            <PlaylistPage />
           </Route>
         </Switch>
       )}
