@@ -57,14 +57,14 @@ function LoginFormPage() {
           </label>
         </div>
         <button type="submit" className="login-submit">Log In</button>
-        <div className="demo-container">
+      </form>
+      <div className="demo-container">
           <p>Want to check out the site as a user?</p>
           <button className="demo-button" onClick={(e) => {
             setCredential("Demo-lition")
             setPassword("password")
           }}>Demo Login</button>
         </div>
-      </form>
     </div>
   );
 }

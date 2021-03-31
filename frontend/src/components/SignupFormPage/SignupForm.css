@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
 }
 
 .signup-form {
@@ -35,7 +35,7 @@
   margin-top: 10px;
   background-color: #40A2C6;
   opacity: .8;
-  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
   border: 1px solid black;
   color: white;
 }

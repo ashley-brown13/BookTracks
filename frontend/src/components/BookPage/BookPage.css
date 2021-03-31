@@ -1,0 +1,38 @@
+.book-total-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  align-content: center;
+  padding-right: 20px;
+  padding-top: 10px;
+  font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
+}
+
+.book-container {
+  max-width: 150px;
+  padding-right: 200px;
+}
+
+.book-container-title {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.book-container-author {
+  font-size: 12px;
+}
+
+.book-container-more-info {
+  font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
+  font-size: 12px;
+  background-color: white;
+  padding: 5px;
+  border: 1px solid black;
+  width: 130px;
+}
+
+.book-container-goog-link {
+  text-decoration: none;
+  color: #A2C640;
+  font-weight: bold;
+}

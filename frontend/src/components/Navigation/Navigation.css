@@ -3,7 +3,7 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
   border-bottom: solid 1px black;
   padding: 5px;
   margin-bottom: 15px;
@@ -40,7 +40,7 @@
 }
 
 .profile-dropdown {
-  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
   font-size: 12px;
   text-decoration: none;
   display: flex;
@@ -64,7 +64,7 @@
 button:focus {outline:0;}
 
 #logout-button {
-  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
   margin-top: -10px;
   width: 70px;
   font-size: 11px;

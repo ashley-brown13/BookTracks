@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { loadBook } from '../../store/books';
+import './BookPage.css';
 
 const BookPage = () => {
   const dispatch = useDispatch()
@@ -13,14 +14,14 @@ const BookPage = () => {
   }, [bookId]);
 
   return (
-    <div>
+    <div className="book-total-container">
       {book &&
-        <div>
-          <img src={book.imageURL}></img>
-          <h2>{book.title}</h2>
-          <h3>{book.author}</h3>
-          <button>
-            <a href={book.googleLink} target="_blank">More Info</a>
+        <div className="book-container">
+          <img src={book.imageURL} alt="book cover" className="book-container-image"></img>
+          <p className="book-container-title">{book.title}</p>
+          <p className="book-container-author">{book.author}</p>
+          <button className="book-container-more-info">
+            <a href={book.googleLink} target="_blank" className="book-container-goog-link">More Info</a>
           </button>
         </div>
       }
