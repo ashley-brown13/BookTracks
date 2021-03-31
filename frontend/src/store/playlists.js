@@ -1,18 +1,19 @@
 const LOAD_ONE = 'playlists/loadOne';
 
-const loadOne = (playlist) => {
+const loadOne = (playlist, userName) => {
   return {
     type: LOAD_ONE,
     playlist: playlist,
+    userName: userName,
   };
 };
 
-export const loadPlaylist = (id) => async dispatch => {
-  const response = await fetch(`/api/playlists/${id}`);
+export const loadPlaylist = (bookId, playlistId) => async dispatch => {
+  const response = await fetch(`/api/books/${bookId}/playlists/${playlistId}`);
   if(response.ok) {
-    const playlist = await response.json();
-
-    dispatch(loadOne(playlist))
+    const wholeObject = await response.json();
+    const {playlist, userName} = wholeObject
+    dispatch(loadOne(playlist, userName))
   }
 }
 
@@ -32,7 +33,8 @@ const playlistsReducer = (state = initialState, action) => {
     case LOAD_ONE:
       let fixedLink = generate(action.playlist.spotifyLink)
       newState = Object.assign({}, state);
-      newState.playlist = action.playlist
+      newState.playlist = action.playlist;
+      newState.userName = action.userName;
       newState.playlist.fixedLink = fixedLink;
       return newState
     default:

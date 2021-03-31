@@ -1,0 +1,4 @@
+.playlist-total-container {
+  display: flex;
+  flex-direction: row-reverse
+}

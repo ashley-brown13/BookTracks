@@ -26,11 +26,11 @@ function App() {
           <Route path="/signup">
             <SignupFormPage />
           </Route>
-          <Route path="/books/:bookId">
-            <BookPage />
-          </Route>
-          <Route path="/playlists/:playlistId">
+          <Route exact path="/books/:bookId/playlists/:playlistId">
             <PlaylistPage />
+          </Route>
+          <Route exact path="/books/:bookId/playlists">
+            <BookPage />
           </Route>
         </Switch>
       )}

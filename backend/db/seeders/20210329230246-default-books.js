@@ -24,7 +24,7 @@ module.exports = {
       "title": "The Tao of Pooh",
       "author": "Benjamin Hoff",
       "googleLink": "http://books.google.com/books?id=IAhbAAAAMAAJ&hl=&source=gbs_api",
-      "imageURL": "http://books.google.com/books/content?id=IAhbAAAAMAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+      "imageURL": "http://books.google.com/books/content?id=6zJvPwAACAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
       "createdAt": new Date(),
       "updatedAt": new Date()
       },
@@ -40,7 +40,7 @@ module.exports = {
       "title": "The Te of Piglet",
       "author": "Benjamin Hoff",
       "googleLink": "http://books.google.com/books?id=SJzc6cjDFy8C&hl=&source=gbs_api",
-      "imageURL": "http://books.google.com/books/content?id=SJzc6cjDFy8C&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+      "imageURL": "http://books.google.com/books/content?id=g-I8PgAACAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
       "createdAt": new Date(),
       "updatedAt": new Date()
       },
