@@ -51,8 +51,8 @@
 }
 
 .user-button {
-  background-color: #A1C340;
-  opacity: .8;
+  background-color: #A2C640;
+  opacity: .95;
   padding-top: 5px;
   padding-bottom: 5px;
   padding-right: 10px;
@@ -69,7 +69,8 @@ button:focus {outline:0;}
   width: 70px;
   font-size: 11px;
   border: solid 1px black;
-  background-color: #99CDDF;
+  background-color: #F1887F;
   opacity: .8;
   margin-bottom: 5px;
+  color: white;
 }

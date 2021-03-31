@@ -33,10 +33,11 @@
   width: 207px;
   height: 30px;
   margin-top: 10px;
-  background-color: #A1C340;
+  background-color: #40A2C6;
   opacity: .8;
   font-family: Georgia, 'Times New Roman', Times, serif;
   border: 1px solid black;
+  color: white;
 }
 
 button:focus {outline:0;}
@@ -51,7 +52,7 @@ button:focus {outline:0;}
   background: transparent;
   border: white;
   font-family: Georgia, 'Times New Roman', Times, serif;
-  color: #40A1C3;
+  color: #5FC1D8;
   padding-top: 2px;
   font-size: 11px;
 }
