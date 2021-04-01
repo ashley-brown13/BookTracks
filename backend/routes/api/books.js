@@ -9,6 +9,12 @@ router.get('/:bookId', asyncHandler(async function(req, res) {
   return res.json(book);
 }));
 
+router.get('/:bookId/playlists', asyncHandler(async function(req, res) {
+  const bookId = req.params.bookId;
+  const playlists = await Playlist.findAll({where: {bookId}})
+  return res.json(playlists);
+}));
+
 router.get('/:bookId/playlists/:playlistId', asyncHandler(async function(req, res) {
   const playlist = await Playlist.findByPk(req.params.playlistId);
   const user = await User.findByPk(playlist.userId)
