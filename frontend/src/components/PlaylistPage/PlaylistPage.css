@@ -6,7 +6,7 @@
 }
 
 .playlist-image-container {
-  max-width: 500px;
+  max-width: 400px;
   height: fit-content;
   margin-left: 50px;
   margin-right: 50px;
@@ -20,12 +20,12 @@
   display: flex;
   flex-direction: row-reverse;
   align-items: flex-start;
-  margin-left: 100px;
+  margin-left: 200px;
   margin-top: 10px;
 }
 
 .playlist-details {
-  font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
+  font-family: 'myFont',Helvetica,Arial,sans-serif;
 }
 
 .playlist-container-title {

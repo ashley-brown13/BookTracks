@@ -2,7 +2,6 @@ import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { loadPlaylist } from '../../store/playlists';
-import { loadBook } from '../../store/books';
 import BookPage from '../BookPage'
 import './PlaylistPage.css';
 

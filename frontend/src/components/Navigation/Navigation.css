@@ -1,9 +1,25 @@
+/* @font-face {
+  font-family: 'myFont';
+  src:  url('../Fonts/FreeSans.svg#svgFontName') format('svg');
+  src:  url('../Fonts/FreeSans.eot'),
+        url('../Fonts/FreeSans.eot?#iefix') format('embedded-opentype'),
+        url('../Fonts/FreeSans.woff') format('woff'),
+        url('../Fonts/FreeSans.ttf') format('truetype');} */
+
+@font-face {
+  font-family: 'myFont';
+  src:  url('../Fonts/PragmaticaMedium.svg#svgFontName') format('svg');
+  src:  url('../Fonts/PragmaticaMedium.eot'),
+        url('../Fonts/PragmaticaMedium.eot?#iefix') format('embedded-opentype'),
+        url('../Fonts/PragmaticaMedium.woff') format('woff'),
+        url('../Fonts/PragmaticaMedium.ttf') format('truetype');}
+
 .navigation-bar {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
+  font-family: 'myFont',Helvetica,Arial,sans-serif;
   border-bottom: solid 1px black;
   padding: 5px;
   margin-bottom: 15px;
@@ -40,7 +56,7 @@
 }
 
 .profile-dropdown {
-  font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
+  font-family: 'myFont',Helvetica,Arial,sans-serif;
   font-size: 12px;
   text-decoration: none;
   display: flex;
@@ -64,7 +80,7 @@
 button:focus {outline:0;}
 
 #logout-button {
-  font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
+  font-family: 'myFont',Helvetica,Arial,sans-serif;
   margin-top: -10px;
   width: 70px;
   font-size: 11px;

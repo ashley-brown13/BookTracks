@@ -5,12 +5,12 @@
   align-content: center;
   padding-right: 20px;
   padding-top: 10px;
-  font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
+  font-family: 'myFont',Helvetica,Arial,sans-serif;
 }
 
 .book-container {
   max-width: 150px;
-  padding-right: 100px;
+  padding-right: 200px;
 }
 
 .book-container-title {
@@ -23,7 +23,7 @@
 }
 
 .book-container-more-info {
-  font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
+  font-family: 'myFont',Helvetica,Arial,sans-serif;
   font-size: 12px;
   background-color: white;
   padding: 5px;

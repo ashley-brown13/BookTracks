@@ -3,7 +3,7 @@ import { useDispatch } from "react-redux";
 import { Route, Switch } from "react-router-dom";
 import LoginFormPage from "./components/LoginFormPage";
 import SignupFormPage from "./components/SignupFormPage";
-import BookPage from "./components/BookPage"
+import PlaylistsPage from "./components/PlaylistsPage"
 import PlaylistPage from './components/PlaylistPage'
 import * as sessionActions from "./store/session";
 import Navigation from "./components/Navigation";
@@ -30,7 +30,7 @@ function App() {
             <PlaylistPage />
           </Route>
           <Route exact path="/books/:bookId/playlists">
-            <BookPage />
+            <PlaylistsPage />
           </Route>
         </Switch>
       )}

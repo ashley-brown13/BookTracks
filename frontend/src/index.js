@@ -22,7 +22,7 @@ function Root() {
   return (
     <ReduxProvider store={store}>
       <BrowserRouter>
-        <App />
+        <App/>
       </BrowserRouter>
     </ReduxProvider>
   );

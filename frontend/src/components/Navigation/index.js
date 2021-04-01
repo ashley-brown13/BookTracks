@@ -25,7 +25,7 @@ function Navigation({ isLoaded }){
   return (
     <div className='navigation-bar'>
       <div className='website-name-icon'>
-        <img src={music} id="book-icon"></img>
+        <img src={music} id="book-icon" alt="book icon"></img>
         <NavLink exact to="/" id="website-name">booktracks</NavLink>
       </div>
       <div className="not-logged-nav">

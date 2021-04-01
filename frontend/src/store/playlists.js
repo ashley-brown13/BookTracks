@@ -1,4 +1,5 @@
 const LOAD_ONE = 'playlists/loadOne';
+const LOAD_ALL = 'playlists/loadAll';
 
 const loadOne = (playlist, userName) => {
   return {
@@ -8,12 +9,27 @@ const loadOne = (playlist, userName) => {
   };
 };
 
+const loadAll = (playlists) => {
+  return {
+    type: LOAD_ALL,
+    playlists: playlists,
+  }
+}
+
 export const loadPlaylist = (bookId, playlistId) => async dispatch => {
   const response = await fetch(`/api/books/${bookId}/playlists/${playlistId}`);
   if(response.ok) {
     const wholeObject = await response.json();
     const {playlist, userName} = wholeObject
     dispatch(loadOne(playlist, userName))
+  }
+}
+
+export const loadPlaylists = (bookId) => async dispatch => {
+  const response = await fetch(`/api/books/${bookId}/playlists`);
+  if(response.ok) {
+    const playlists = await response.json();
+    dispatch(loadAll(playlists))
   }
 }
 
@@ -25,7 +41,7 @@ function generate(spotifyLink){
   return copy + first + second + third
 }
 
-const initialState = { playlist: null }
+const initialState = { playlist: null, playlists: null }
 
 const playlistsReducer = (state = initialState, action) => {
   let newState;
@@ -36,6 +52,10 @@ const playlistsReducer = (state = initialState, action) => {
       newState.playlist = action.playlist;
       newState.userName = action.userName;
       newState.playlist.fixedLink = fixedLink;
+      return newState
+    case LOAD_ALL:
+      newState = Object.assign({}, state);
+      newState.playlists = action.playlists;
       return newState
     default:
       return state;
