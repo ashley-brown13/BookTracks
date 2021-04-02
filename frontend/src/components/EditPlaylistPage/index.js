@@ -19,8 +19,6 @@ const EditPlaylistPage = () => {
   const [errors, setErrors] = useState([]);
   const { bookId } = useParams();
   const userId = sessionUser.id;
-  const playlistTest = useSelector(state => state.playlists[playlistId])
-  console.log(playlistTest)
 
 
   useEffect(() => {

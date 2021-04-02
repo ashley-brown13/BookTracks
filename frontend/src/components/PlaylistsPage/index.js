@@ -20,7 +20,7 @@ const PlaylistsPage = () => {
       <BookPage />
       <div className="playlists-container">
         {playlists && playlists.map((playlist) => (
-            <div className="ind-playlist-container">
+            <div className="ind-playlist-container" key={playlist.id}>
               <div className="ind-playlist-image-container">
                 <a href={`/books/${bookId}/playlists/${playlist.id}`}>
                   <img src={playlist.imageURL} className="ind-playlist-image"></img>

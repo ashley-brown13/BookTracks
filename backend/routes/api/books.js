@@ -24,10 +24,6 @@ const validatePlaylist = [
   handleValidationErrors,
 ];
 
-router.get('/', asyncHandler(async function(req, res) {
-  const books = await Book.findAll();
-  return res.json(books);
-}));
 
 router.get('/:bookId', asyncHandler(async function(req, res) {
   const book = await Book.findByPk(req.params.bookId);
@@ -71,5 +67,7 @@ router.put('/:bookId/playlists/:playlistId/editplaylist', asyncHandler(async fun
   const playlist = await Playlist.findByPk(req.params.playlistId);
   return res.json(playlist);
 }));
+
+
 
 module.exports = router;

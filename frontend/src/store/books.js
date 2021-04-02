@@ -16,6 +16,14 @@ const loadAll = (books) => {
   }
 }
 
+export const loadBooks = () => async dispatch => {
+  const response = await fetch(`/api/`);
+  if(response.ok) {
+    const books = await response.json();
+    dispatch(loadAll(books))
+  }
+}
+
 export const loadBook = (id) => async dispatch => {
   const response = await fetch(`/api/books/${id}`);
   if(response.ok) {
@@ -24,13 +32,6 @@ export const loadBook = (id) => async dispatch => {
   }
 }
 
-export const loadBooks = () => async dispatch => {
-  const response = await fetch(`/api/books`);
-  if(response.ok) {
-    const books = await response.json();
-    dispatch(loadAll(books))
-  }
-}
 
 const initialState = { book: null, books: null }
 
@@ -41,7 +42,7 @@ const booksReducer = (state = initialState, action) => {
       newState = Object.assign({}, state);
       newState.book = action.book
       return newState
-    case LOAD_ONE:
+    case LOAD_ALL:
       newState = Object.assign({}, state);
       newState.books = action.books
       return newState
