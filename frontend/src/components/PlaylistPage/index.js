@@ -1,24 +1,41 @@
 import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { useParams } from 'react-router-dom';
-import { loadPlaylist } from '../../store/playlists';
+import { useParams, useHistory } from 'react-router-dom';
+import { loadPlaylist, deletePlaylist } from '../../store/playlists';
 import BookPage from '../BookPage'
 import './PlaylistPage.css';
 
 const PlaylistPage = () => {
   const dispatch = useDispatch()
+  const history = useHistory();
   const { playlistId } = useParams();
   const { bookId } = useParams()
   const playlist = useSelector(state => state.playlists.playlist);
   const userName = useSelector(state => state.playlists.userName);
   const sessionUser = useSelector((state) => state.session.user);
-  const userId = sessionUser.id;
+  let userId = null;
+
+  if(sessionUser){
+    userId = sessionUser.id
+  }
 
   useEffect(() => {
     dispatch(loadPlaylist(bookId, playlistId));
   }, [playlistId]);
 
   let content = null;
+
+  const handleDelete = async (e) => {
+    e.preventDefault();
+
+    let deletedPlaylist = await dispatch(deletePlaylist(bookId, playlistId));
+
+    if (deletedPlaylist) {
+      history.push(`/books/${bookId}/playlists`);
+    }
+  };
+
+
 
   if(playlist){
     if(playlist.userId === userId){
@@ -28,7 +45,7 @@ const PlaylistPage = () => {
             <button className="edit-playlist-button">Edit Playlist</button>
           </a>
           <form className="playlist-delete-form">
-            <button type="submit" className="delete-playlist-button">Delete Playlist</button>
+            <button type="submit" onSubmit={handleDelete} className="delete-playlist-button">Delete Playlist</button>
           </form>
         </div>
       )

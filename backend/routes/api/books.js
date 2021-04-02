@@ -24,6 +24,11 @@ const validatePlaylist = [
   handleValidationErrors,
 ];
 
+router.get('/', asyncHandler(async function(req, res) {
+  const books = await Book.findAll();
+  return res.json(books);
+}));
+
 router.get('/:bookId', asyncHandler(async function(req, res) {
   const book = await Book.findByPk(req.params.bookId);
   return res.json(book);
@@ -47,6 +52,24 @@ router.get('/:bookId/playlists/:playlistId', asyncHandler(async function(req, re
   const user = await User.findByPk(playlist.userId)
   const userName = user.username
   return res.json({playlist, userName});
+}));
+
+router.delete('/:bookId/playlists/:playlistId/delete', asyncHandler(async function(req, res) {
+  const { playlistId } = req.body
+  const playlist = await Playlist.findByPk(playlistId);
+  await playlist.destroy()
+  return res.json(playlist);
+}));
+
+router.get('/:bookId/playlists/:playlistId/editplaylist', asyncHandler(async function(req, res) {
+  const playlist = await Playlist.findByPk(req.params.playlistId);
+  return res.json(playlist);
+}));
+
+router.put('/:bookId/playlists/:playlistId/editplaylist', asyncHandler(async function(req, res) {
+  await Playlist.update(req.body, {where: {id: req.params.playlistId }});
+  const playlist = await Playlist.findByPk(req.params.playlistId);
+  return res.json(playlist);
 }));
 
 module.exports = router;

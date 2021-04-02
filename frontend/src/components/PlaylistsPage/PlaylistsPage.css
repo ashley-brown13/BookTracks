@@ -23,7 +23,7 @@
 .ind-playlist-container {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
   border: 3px solid #40A1C3;
   border-radius: 7px;
   text-decoration: none;
@@ -31,6 +31,7 @@
   padding-left: 10px;
   padding-top: 10px;
   margin: 20px;
+  max-height: 200px;
 }
 
 .ind-playlist-title {

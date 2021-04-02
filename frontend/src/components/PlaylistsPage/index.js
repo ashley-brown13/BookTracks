@@ -26,7 +26,9 @@ const PlaylistsPage = () => {
                   <img src={playlist.imageURL} className="ind-playlist-image"></img>
                 </a>
               </div>
+              <a href={`/books/${bookId}/playlists/${playlist.id}`} className="ind-playlist-title">
                 <p className="ind-playlist-title">{playlist.title}</p>
+              </a>
             </div>
           ))}
       </div>

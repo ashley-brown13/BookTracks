@@ -6,6 +6,7 @@ import SignupFormPage from "./components/SignupFormPage";
 import PlaylistsPage from "./components/PlaylistsPage"
 import PlaylistPage from './components/PlaylistPage'
 import AddPlaylistPage from './components/AddPlaylistPage'
+import EditPlaylistPage from './components/EditPlaylistPage'
 import * as sessionActions from "./store/session";
 import Navigation from "./components/Navigation";
 
@@ -29,6 +30,9 @@ function App() {
           </Route>
           <Route exact path="/books/:bookId/playlists/addplaylist">
             <AddPlaylistPage />
+          </Route>
+          <Route exact path="/books/:bookId/playlists/:playlistId/editplaylist">
+            <EditPlaylistPage />
           </Route>
           <Route exact path="/books/:bookId/playlists/:playlistId">
             <PlaylistPage />

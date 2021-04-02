@@ -16,6 +16,7 @@
 .book-container-title {
   font-size: 14px;
   font-weight: bold;
+  text-decoration: none;
 }
 
 .book-container-author {
@@ -29,6 +30,7 @@
   padding: 5px;
   border: 1px solid black;
   width: 130px;
+  margin: 5px;
 }
 
 .book-container-goog-link {

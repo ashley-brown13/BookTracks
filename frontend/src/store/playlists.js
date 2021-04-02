@@ -1,10 +1,11 @@
 import { csrfFetch } from './csrf';
 
-const LOAD_ONE = 'playlists/loadOne';
-const LOAD_ALL = 'playlists/loadAll';
-const ADD_ONE = 'playlists/addPlaylist'
+const LOAD_ONE = 'playlists/LOAD_ONE';
+const LOAD_ALL = 'playlists/LOAD_ALL';
+const ADD_ONE = 'playlists/ADD_ONE'
+const REMOVE_PLAYLIST = "playlists/REMOVE_PLAYLIST";
 
-const loadOne = (playlist, userName) => {
+const loadOne = (playlist, userName = null) => {
   return {
     type: LOAD_ONE,
     playlist: playlist,
@@ -24,12 +25,25 @@ const addPlaylist = (playlist) => ({
   playlist: playlist,
 });
 
+const removePlaylist = (playlistId) => ({
+  type: REMOVE_PLAYLIST,
+  playlistId: playlistId
+});
+
 export const loadPlaylist = (bookId, playlistId) => async dispatch => {
   const response = await fetch(`/api/books/${bookId}/playlists/${playlistId}`);
   if(response.ok) {
     const wholeObject = await response.json();
     const {playlist, userName} = wholeObject
     dispatch(loadOne(playlist, userName))
+  }
+}
+
+export const loadPlaylistForEdit = (bookId, playlistId) => async dispatch => {
+  const response = await fetch(`/api/books/${bookId}/playlists/${playlistId}/editplaylist`);
+  if(response.ok) {
+    const playlist = await response.json();
+    dispatch(loadOne(playlist))
   }
 }
 
@@ -42,7 +56,6 @@ export const loadPlaylists = (bookId) => async dispatch => {
 }
 
 export const createPlaylist = (bookId, payload) => async dispatch => {
-  console.log(payload)
   const response = await csrfFetch(`/api/books/${bookId}/playlists/addplaylist`, {
     method: "POST",
     body: JSON.stringify(payload),
@@ -52,6 +65,30 @@ export const createPlaylist = (bookId, payload) => async dispatch => {
   dispatch(addPlaylist(playlist));
   return playlist;
 }
+
+export const updatePlaylist = (bookId, payload) => async dispatch => {
+  console.log(payload.id)
+  const response = await csrfFetch(`/api/books/${bookId}/playlists/${payload.id}/editplaylist`, {
+    method: "PUT",
+    body: JSON.stringify(payload),
+  });
+  if (!response.ok) throw response;
+  const playlist = await response.json();
+  console.log(playlist)
+  dispatch(addPlaylist(playlist));
+  return playlist;
+}
+
+export const deletePlaylist = (bookId, playlistId) => async dispatch => {
+  const response = await csrfFetch(`/api/books/${bookId}/playlists/${playlistId}/delete`, {
+    method: 'DELETE',
+    body: JSON.stringify(playlistId),
+  });
+  if (response.ok) {
+    const playlist = await response.json();
+    dispatch(removePlaylist(playlistId));
+  }
+};
 
 function generate(spotifyLink){
   let copy = ""
@@ -78,6 +115,13 @@ const playlistsReducer = (state = initialState, action) => {
       newState.playlists = action.playlists;
       return newState
     case ADD_ONE:
+      if (!state[action.playlist.id]) {
+        newState = {
+          ...state,
+          [action.playlist.id]: action.playlist
+        };
+        return newState
+      }
       return {
         ...state,
         [action.playlist.id]: {
@@ -85,6 +129,11 @@ const playlistsReducer = (state = initialState, action) => {
           ...action.playlist,
         }
       };
+    case REMOVE_PLAYLIST: {
+      const newState = { ...state };
+      delete newState[action.playlistId];
+      return newState;
+    }
     default:
       return state;
   }
