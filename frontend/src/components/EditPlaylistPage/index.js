@@ -12,10 +12,10 @@ const EditPlaylistPage = () => {
   const { playlistId } = useParams()
   const sessionUser = useSelector((state) => state.session.user);
   const playlist = useSelector(state => state.playlists.playlist);
-  const [title, setTitle] = useState("");
-  const [description, setDescription] = useState("");
-  const [spotifyLink, setSpotifyLink] = useState("");
-  const [imageURL, setImageURL] = useState("");
+  const [title, setTitle] = useState(playlist.title);
+  const [description, setDescription] = useState(playlist.description);
+  const [spotifyLink, setSpotifyLink] = useState(playlist.spotifyLink);
+  const [imageURL, setImageURL] = useState(playlist.imageURL);
   const [errors, setErrors] = useState([]);
   const { bookId } = useParams();
   const userId = sessionUser.id;
@@ -24,13 +24,6 @@ const EditPlaylistPage = () => {
   useEffect(() => {
     dispatch(loadPlaylistForEdit(bookId, playlistId));
   }, []);
-
-  // if(playlist){
-  //   setTitle(playlist.title)
-  //   setDescription(playlist.description)
-  //   setSpotifyLink(playlist.spotifyLink)
-  //   setImageURL(playlist.imageURL)
-  // }
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -52,6 +45,10 @@ const EditPlaylistPage = () => {
     }
   };
 
+  if(!playlist){
+    return null
+  }
+
   return (
     <div className="edit-playlist-container">
       <BookPage />
@@ -71,7 +68,7 @@ const EditPlaylistPage = () => {
                 placeholder={playlist.title}
                 value={title}
                 onChange={(e) => setTitle(e.target.value)}
-
+                required
               />
             </label>
           </div>
@@ -84,6 +81,7 @@ const EditPlaylistPage = () => {
                   placeholder={playlist.description}
                   value={description}
                   onChange={(e) => setDescription(e.target.value)}
+                  required
                 />
             </label>
           </div>
@@ -96,7 +94,7 @@ const EditPlaylistPage = () => {
                   placeholder={playlist.spotifyLink}
                   value={spotifyLink}
                   onChange={(e) => setSpotifyLink(e.target.value)}
-
+                  required
                 />
             </label>
           </div>
@@ -109,6 +107,7 @@ const EditPlaylistPage = () => {
                   placeholder={playlist.imageURL}
                   value={imageURL}
                   onChange={(e) => setImageURL(e.target.value)}
+                  required
                 />
             </label>
           </div>

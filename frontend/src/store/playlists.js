@@ -87,6 +87,7 @@ export const deletePlaylist = (bookId, playlistId) => async dispatch => {
   if (response.ok) {
     const playlist = await response.json();
     dispatch(removePlaylist(playlistId));
+    return playlist
   }
 };
 

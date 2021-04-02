@@ -1,13 +1,12 @@
 .books-total-container {
   display: flex;
   flex-direction: column;
-
   padding-left: 100px;
 }
 
 .header {
   font-family: 'myFont',Helvetica,Arial,sans-serif;
-  font-weight: lighter;
+  font-weight: 100
 }
 
 .ind-book-image-container {
