@@ -1,5 +1,8 @@
+import { csrfFetch } from './csrf';
+
 const LOAD_ONE = 'playlists/loadOne';
 const LOAD_ALL = 'playlists/loadAll';
+const ADD_ONE = 'playlists/addPlaylist'
 
 const loadOne = (playlist, userName) => {
   return {
@@ -16,6 +19,11 @@ const loadAll = (playlists) => {
   }
 }
 
+const addPlaylist = (playlist) => ({
+  type: ADD_ONE,
+  playlist: playlist,
+});
+
 export const loadPlaylist = (bookId, playlistId) => async dispatch => {
   const response = await fetch(`/api/books/${bookId}/playlists/${playlistId}`);
   if(response.ok) {
@@ -31,6 +39,18 @@ export const loadPlaylists = (bookId) => async dispatch => {
     const playlists = await response.json();
     dispatch(loadAll(playlists))
   }
+}
+
+export const createPlaylist = (bookId, payload) => async dispatch => {
+  console.log(payload)
+  const response = await csrfFetch(`/api/books/${bookId}/playlists/addplaylist`, {
+    method: "POST",
+    body: JSON.stringify(payload),
+  });
+  if (!response.ok) throw response;
+  const playlist = await response.json();
+  dispatch(addPlaylist(playlist));
+  return playlist;
 }
 
 function generate(spotifyLink){
@@ -57,6 +77,14 @@ const playlistsReducer = (state = initialState, action) => {
       newState = Object.assign({}, state);
       newState.playlists = action.playlists;
       return newState
+    case ADD_ONE:
+      return {
+        ...state,
+        [action.playlist.id]: {
+          ...state[action.playlist.id],
+          ...action.playlist,
+        }
+      };
     default:
       return state;
   }

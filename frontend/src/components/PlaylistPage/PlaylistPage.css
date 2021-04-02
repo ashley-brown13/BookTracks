@@ -12,6 +12,18 @@
   margin-right: 50px;
 }
 
+.image-and-buttons {
+  display: flex;
+  flex-direction: column;
+}
+
+.user-playlist-buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 10px;
+}
+
 .playlist-container-image {
   max-width: 100%
 }
@@ -26,6 +38,7 @@
 
 .playlist-details {
   font-family: 'myFont',Helvetica,Arial,sans-serif;
+  max-width: 350px;
 }
 
 .playlist-container-title {
@@ -45,4 +58,16 @@
 
 .playlist-container-username-name {
   color: #A2C640;
+}
+
+.edit-playlist-button,
+.delete-playlist-button {
+  width: 207px;
+  height: 30px;
+  margin-top: 10px;
+  background-color: #40A2C6;
+  opacity: .8;
+  font-family: 'myFont',Helvetica,Arial,sans-serif;
+  border: 1px solid black;
+  color: white;
 }

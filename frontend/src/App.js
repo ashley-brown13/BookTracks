@@ -5,6 +5,7 @@ import LoginFormPage from "./components/LoginFormPage";
 import SignupFormPage from "./components/SignupFormPage";
 import PlaylistsPage from "./components/PlaylistsPage"
 import PlaylistPage from './components/PlaylistPage'
+import AddPlaylistPage from './components/AddPlaylistPage'
 import * as sessionActions from "./store/session";
 import Navigation from "./components/Navigation";
 
@@ -25,6 +26,9 @@ function App() {
           </Route>
           <Route path="/signup">
             <SignupFormPage />
+          </Route>
+          <Route exact path="/books/:bookId/playlists/addplaylist">
+            <AddPlaylistPage />
           </Route>
           <Route exact path="/books/:bookId/playlists/:playlistId">
             <PlaylistPage />

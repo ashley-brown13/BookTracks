@@ -1,12 +1,39 @@
 'use strict';
 module.exports = (sequelize, DataTypes) => {
   const Playlist = sequelize.define('Playlist', {
-    title: DataTypes.STRING,
-    description: DataTypes.TEXT,
-    spotifyLink: DataTypes.STRING,
-    imageURL: DataTypes.STRING,
-    bookId: DataTypes.INTEGER,
-    userId: DataTypes.INTEGER
+    title: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        len: [3, 50]
+      }
+    },
+    description: {
+      type: DataTypes.TEXT,
+      allowNull: false,
+    },
+    spotifyLink: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        len: [81, 100]
+      }
+    },
+    imageURL: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        len: [3, 256]
+      }
+    },
+    bookId: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+    },
+    userId: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+    },
   }, {});
   Playlist.associate = function(models) {
     Playlist.belongsTo(models.User, {foreignKey: 'userId'})

@@ -11,18 +11,42 @@ const PlaylistPage = () => {
   const { bookId } = useParams()
   const playlist = useSelector(state => state.playlists.playlist);
   const userName = useSelector(state => state.playlists.userName);
+  const sessionUser = useSelector((state) => state.session.user);
+  const userId = sessionUser.id;
 
   useEffect(() => {
     dispatch(loadPlaylist(bookId, playlistId));
   }, [playlistId]);
+
+  let content = null;
+
+  if(playlist){
+    if(playlist.userId === userId){
+      content = (
+        <div className="user-playlist-buttons">
+          <a href={`/books/${bookId}/playlists/${playlistId}/editplaylist`}>
+            <button className="edit-playlist-button">Edit Playlist</button>
+          </a>
+          <form className="playlist-delete-form">
+            <button type="submit" className="delete-playlist-button">Delete Playlist</button>
+          </form>
+        </div>
+      )
+    }
+  }
+
+
 
   return (
     <div className="playlist-total-container">
       <BookPage />
       {playlist &&
         <div className="playlist-container">
-          <div className="playlist-image-container">
-            <img src={playlist.imageURL} alt="playlist cover" className="playlist-container-image"></img>
+          <div className="image-and-buttons">
+            <div className="playlist-image-container">
+              <img src={playlist.imageURL} alt="playlist cover" className="playlist-container-image"></img>
+            </div>
+            {content}
           </div>
           <div className="playlist-details">
             <p className="playlist-container-title">{playlist.title}</p>

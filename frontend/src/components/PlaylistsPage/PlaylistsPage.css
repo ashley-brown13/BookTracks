@@ -16,6 +16,8 @@
 
 .playlists-container {
   padding-left: 200px;
+  display: flex;
+  flex-direction: row;
 }
 
 .ind-playlist-container {
@@ -28,6 +30,7 @@
   padding-right: 10px;
   padding-left: 10px;
   padding-top: 10px;
+  margin: 20px;
 }
 
 .ind-playlist-title {

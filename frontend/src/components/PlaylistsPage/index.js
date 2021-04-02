@@ -14,6 +14,7 @@ const PlaylistsPage = () => {
     dispatch(loadPlaylists(bookId));
   }, [bookId]);
 
+
   return (
     <div className="playlists-total-container">
       <BookPage />
