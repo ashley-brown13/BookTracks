@@ -1,4 +1,4 @@
-.books-total-container {
+.search-books-total-container {
   display: flex;
   flex-direction: column;
   padding-left: 100px;
@@ -10,22 +10,26 @@
   margin-bottom: -10px;
 }
 
-.ind-book-image-container {
+.ind-search-book-author {
+  margin-top: -5px;
+}
+
+.ind-search-book-image-container {
   max-width: 200px;
 }
 
-.ind-book-image {
+.ind-search-book-image {
   max-width: 100%;
   border-radius: 7px;
 }
 
-.books-container {
+.search-books-container {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
 }
 
-.ind-book-container {
+.ind-search-book-container {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -38,7 +42,7 @@
   width: 150px;
 }
 
-.ind-book-title {
+.ind-search-book-title {
   font-family: 'myFont',Helvetica,Arial,sans-serif;
   text-decoration: none;
   color: #A2C640;

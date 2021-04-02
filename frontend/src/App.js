@@ -8,6 +8,7 @@ import PlaylistPage from './components/PlaylistPage'
 import AddPlaylistPage from './components/AddPlaylistPage'
 import EditPlaylistPage from './components/EditPlaylistPage'
 import HomePage from './components/HomePage'
+import SearchResultsPage from './components/SearchResultsPage'
 import * as sessionActions from "./store/session";
 import Navigation from "./components/Navigation";
 
@@ -23,6 +24,9 @@ function App() {
       <Navigation isLoaded={isLoaded} />
       {isLoaded && (
         <Switch>
+          <Route exact path="/search/:searchTerm">
+            <SearchResultsPage />
+          </Route>
           <Route exact path="/">
             <HomePage />
           </Route>

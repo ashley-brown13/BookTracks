@@ -1,12 +1,32 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { useHistory } from 'react-router-dom';
+import { searchBooks } from '../../store/books';
 import ProfileButton from './ProfileButton';
 import './Navigation.css';
 import music from '../../images/headphones.png'
 
 function Navigation({ isLoaded }){
   const sessionUser = useSelector(state => state.session.user);
+  const [search, setSearch] = useState("")
+  const history = useHistory();
+  // const dispatch = useDispatch();
+
+  const handleSearch = async (e) => {
+    e.preventDefault();
+    console.log(search)
+    // const payload = {
+    //   search
+    // };
+
+    // let searched = await dispatch(searchBooks(payload));
+
+    if (search) {
+      history.push(`/search/${search}`);
+    }
+  };
+
 
   let sessionLinks;
   if (sessionUser) {
@@ -27,6 +47,19 @@ function Navigation({ isLoaded }){
       <div className='website-name-icon'>
         <img src={music} id="book-icon" alt="book icon"></img>
         <NavLink exact to="/" id="website-name">booktracks</NavLink>
+      </div>
+      <div className="search-container">
+        <form className="search-form" onSubmit={handleSearch}>
+          <input
+            className="search-input"
+            type="text"
+            placeholder="Search books"
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
+            required
+          />
+          <button type="submit" className="search-button">Search</button>
+        </form>
       </div>
       <div className="not-logged-nav">
         {isLoaded && sessionLinks}

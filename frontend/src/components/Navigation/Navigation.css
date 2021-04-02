@@ -90,3 +90,21 @@ button:focus {outline:0;}
   margin-bottom: 5px;
   color: white;
 }
+
+.search-button {
+  margin-left: 10px;
+  width: 100px;
+  height: 33px;
+  background-color: #40A2C6;
+  opacity: .8;
+  font-family: 'myFont',Helvetica,Arial,sans-serif;
+  border: 1px solid black;
+  color: white;
+}
+
+.search-input {
+  width: 200px;
+  height: 30px;
+  font-family: 'myFont',Helvetica,Arial,sans-serif;
+  border: 1px solid black;
+}

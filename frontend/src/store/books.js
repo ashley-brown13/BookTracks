@@ -1,5 +1,6 @@
 const LOAD_ONE = 'books/LOAD_ONE';
 const LOAD_ALL = 'books/LOAD_ALL';
+// const LOAD_SEARCH = 'books/LOAD_SEARCH'
 
 
 const loadOne = (book) => {
@@ -15,6 +16,13 @@ const loadAll = (books) => {
     books: books
   }
 }
+
+// const loadSearch = (searchResults) => {
+//   return {
+//     type: LOAD_SEARCH,
+//     searchResults: searchResults
+//   };
+// };
 
 export const loadBooks = () => async dispatch => {
   const response = await fetch(`/api/`);
@@ -32,6 +40,14 @@ export const loadBook = (id) => async dispatch => {
   }
 }
 
+export const searchBooks = (searchTerm) => async dispatch => {
+  const response = await fetch(`/api/search/${searchTerm}`);
+  if(response.ok) {
+    const books = await response.json();
+    dispatch(loadAll(books))
+    return books
+  }
+}
 
 const initialState = { book: null, books: null }
 

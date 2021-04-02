@@ -25,6 +25,14 @@ const EditPlaylistPage = () => {
     dispatch(loadPlaylistForEdit(bookId, playlistId));
   }, []);
 
+  // if(playlist){
+  //   setTitle(playlist.title)
+  //   setDescription(playlist.description)
+  //   setSpotifyLink(playlist.spotifyLink)
+  //   setImageURL(playlist.imageURL)
+  // }
+
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     setErrors([]);
