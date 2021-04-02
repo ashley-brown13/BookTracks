@@ -7,15 +7,16 @@ import BookPage from '../BookPage'
 import './EditPlaylistPage.css';
 
 const EditPlaylistPage = () => {
+  const playlist = useSelector(state => state.playlists.playlist);
   const history = useHistory();
   const dispatch = useDispatch();
   const { playlistId } = useParams()
   const sessionUser = useSelector((state) => state.session.user);
-  const playlist = useSelector(state => state.playlists.playlist);
-  const [title, setTitle] = useState(playlist.title);
-  const [description, setDescription] = useState(playlist.description);
-  const [spotifyLink, setSpotifyLink] = useState(playlist.spotifyLink);
-  const [imageURL, setImageURL] = useState(playlist.imageURL);
+  const [title, setTitle] = useState(playlist?.title);
+  const [description, setDescription] = useState(playlist?.description);
+  const [spotifyLink, setSpotifyLink] = useState(playlist?.spotifyLink);
+  const [imageURL, setImageURL] = useState(playlist?.imageURL);
+  // const [loaded, setLoaded] = useState(false)
   const [errors, setErrors] = useState([]);
   const { bookId } = useParams();
   const userId = sessionUser.id;
@@ -23,14 +24,16 @@ const EditPlaylistPage = () => {
 
   useEffect(() => {
     dispatch(loadPlaylistForEdit(bookId, playlistId));
+    // setLoaded(true)
   }, []);
 
-  // if(playlist){
-  //   setTitle(playlist.title)
-  //   setDescription(playlist.description)
-  //   setSpotifyLink(playlist.spotifyLink)
-  //   setImageURL(playlist.imageURL)
-  // }
+  useEffect(() => {
+    setTitle(playlist?.title)
+    setDescription(playlist?.description)
+    setSpotifyLink(playlist?.spotifyLink)
+    setImageURL(playlist?.imageURL)
+  }, [playlist])
+
 
 
   const handleSubmit = async (e) => {

@@ -12,6 +12,7 @@ import SearchResultsPage from './components/SearchResultsPage'
 import * as sessionActions from "./store/session";
 import Navigation from "./components/Navigation";
 
+
 function App() {
   const dispatch = useDispatch();
   const [isLoaded, setIsLoaded] = useState(false);

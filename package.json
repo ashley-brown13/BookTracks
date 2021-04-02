@@ -14,13 +14,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ashley-brown13/my-solo-project.git"
+    "url": "git+https://github.com/ashley-brown13/BookTracks.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/ashley-brown13/my-solo-project/issues"
+    "url": "https://github.com/ashley-brown13/BookTracks/issues"
   },
-  "homepage": "https://github.com/ashley-brown13/my-solo-project#readme"
+  "homepage": "https://github.com/ashley-brown13/BookTracks#readme"
 }

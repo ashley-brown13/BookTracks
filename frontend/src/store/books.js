@@ -17,13 +17,6 @@ const loadAll = (books) => {
   }
 }
 
-// const loadSearch = (searchResults) => {
-//   return {
-//     type: LOAD_SEARCH,
-//     searchResults: searchResults
-//   };
-// };
-
 export const loadBooks = () => async dispatch => {
   const response = await fetch(`/api/`);
   if(response.ok) {
