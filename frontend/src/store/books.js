@@ -1,7 +1,5 @@
 const LOAD_ONE = 'books/LOAD_ONE';
 const LOAD_ALL = 'books/LOAD_ALL';
-// const LOAD_SEARCH = 'books/LOAD_SEARCH'
-
 
 const loadOne = (book) => {
   return {
