@@ -76,6 +76,7 @@
 
 .likes-container {
   display: flex;
+  align-items: center;
 }
 
 .likes-count {
@@ -86,9 +87,11 @@
 .like-button {
   background-color: transparent;
   height: 30px;
+  border: 1px solid black;
 }
 
 .liked-button {
   background-color: red;
   height: 30px;
+  border: 1px solid black;
 }
