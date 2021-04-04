@@ -1,8 +1,6 @@
 import { csrfFetch } from './csrf';
 
 const LOAD_LIKES = 'likes/LOAD_LIKES';
-const ADD_LIKE = 'likes/ADD_LIKE';
-const REMOVE_LIKE = 'likes/REMOVE_LIKE';
 
 const loadAll = (likes) => {
   return {
@@ -11,23 +9,7 @@ const loadAll = (likes) => {
   }
 }
 
-const addLike = (userId, playlistId) => {
-  return {
-    type: ADD_LIKE,
-    userId: userId,
-    playlistId: playlistId
-  }
-}
-
-const removeLike = (userId, playlistId) => {
-  return {
-    type: REMOVE_LIKE,
-    userId: userId,
-    playlistId: playlistId
-  }
-}
-
-export const loadLikes = (bookId, playlistId) => async dispatch => {
+export const loadLikes = (playlistId) => async dispatch => {
   const response = await fetch(`/api/${playlistId}/likes`);
   if(response.ok) {
     const likes = await response.json()
@@ -41,7 +23,7 @@ export const addUserLike = (bookId, userId, playlistId) => async dispatch => {
   });
   if(response.ok) {
     const likes = await response.json()
-    dispatch(addLike(userId, playlistId))
+    dispatch(loadAll(likes))
   }
 }
 
@@ -51,7 +33,7 @@ export const removeUserLike = (bookId, userId, playlistId) => async dispatch => 
   });
   if(response.ok) {
     const likes = await response.json()
-    dispatch(removeLike(userId, playlistId))
+    dispatch(loadAll(likes))
   }
 }
 
@@ -64,20 +46,6 @@ const likesReducer = (state = initialState, action) => {
     case LOAD_LIKES:
       newState = Object.assign({}, state);
       newState.likes = action.likes;
-      return newState
-    case ADD_LIKE:
-      if (!state[action.userId]) {
-        newState = {
-          ...state,
-          [action.userId]: action.userId,
-          [action.playlistId]: action.playlistId
-        };
-        return newState
-      }
-    case REMOVE_LIKE:
-      newState = { ...state };
-      delete newState[action.userId];
-      delete newState[action.playlist]
       return newState
     default:
       return state;

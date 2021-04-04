@@ -9,8 +9,8 @@ const LikeButton = ({userId, bookId, playlistId}) => {
   let length;
 
   useEffect(() => {
-    dispatch(loadLikes(bookId, playlistId))
-  }, [bookId, playlistId])
+    dispatch(loadLikes(playlistId))
+  }, [playlistId])
 
 
   if(!likes){
@@ -23,13 +23,10 @@ const LikeButton = ({userId, bookId, playlistId}) => {
 
   const submitLike = async () => {
     await dispatch(addUserLike(bookId, userId, playlistId))
-    dispatch(loadLikes(bookId, playlistId))
   }
 
   const submitUnLike = async () => {
     await dispatch(removeUserLike(bookId, userId, playlistId))
-    dispatch(loadLikes(bookId, playlistId))
-
   }
 
   let content;
