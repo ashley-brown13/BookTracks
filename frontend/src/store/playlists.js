@@ -55,6 +55,14 @@ export const loadPlaylists = (bookId) => async dispatch => {
   }
 }
 
+export const loadAllPlaylists = () => async dispatch => {
+  const response = await fetch(`/api/playlists`);
+  if(response.ok) {
+    const playlists = await response.json();
+    dispatch(loadAll(playlists))
+  }
+}
+
 export const createPlaylist = (bookId, payload) => async dispatch => {
   const response = await csrfFetch(`/api/books/${bookId}/playlists/addplaylist`, {
     method: "POST",

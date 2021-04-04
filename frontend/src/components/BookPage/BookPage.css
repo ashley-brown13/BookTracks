@@ -10,13 +10,14 @@
 
 .book-container {
   max-width: 150px;
-  padding-right: 200px;
+  padding-right: 150px;
 }
 
 .book-container-title {
   font-size: 14px;
   font-weight: bold;
   text-decoration: none;
+  color: black;
 }
 
 .book-container-author {

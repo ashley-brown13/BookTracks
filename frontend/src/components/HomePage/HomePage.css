@@ -1,7 +1,10 @@
+.home-page {
+  padding-left: 100px;
+}
+
 .books-total-container {
   display: flex;
   flex-direction: column;
-  padding-left: 100px;
 }
 
 .header {
@@ -42,4 +45,46 @@
   font-family: 'myFont',Helvetica,Arial,sans-serif;
   text-decoration: none;
   color: #A2C640;
+}
+
+.ind-playlist-image-container {
+  max-width: 200px;
+}
+
+.ind-playlist-image {
+  max-width: 100%;
+  border-radius: 7px;
+}
+
+.playlists-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: flex-start;
+}
+
+.ind-playlist-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border: 3px solid #40A1C3;
+  border-radius: 7px;
+  text-decoration: none;
+  padding-right: 10px;
+  padding-left: 10px;
+  padding-top: 10px;
+  margin: 20px;
+  max-height: 300px;
+  max-width: 200px;
+}
+
+.ind-playlist-title {
+  font-family: 'myFont',Helvetica,Arial,sans-serif;
+  text-decoration: none;
+  color: #A2C640;
+}
+
+.home-playlists-container {
+  display: flex;
+  flex-direction: column;
 }

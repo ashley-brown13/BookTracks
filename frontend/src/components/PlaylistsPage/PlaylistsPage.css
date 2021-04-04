@@ -15,9 +15,10 @@
 }
 
 .playlists-container {
-  padding-left: 200px;
+  padding-left: 150px;
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
 }
 
 .ind-playlist-container {

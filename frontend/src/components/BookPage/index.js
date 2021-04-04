@@ -35,7 +35,7 @@ const BookPage = () => {
           </button>
           {userId &&
             <button className="book-container-more-info">
-              <a href={`/books/${bookId}/playlists/addplaylist`} target="_blank" className="book-container-goog-link">Add Playlist</a>
+              <a href={`/books/${bookId}/playlists/addplaylist`} className="book-container-goog-link">Add Playlist</a>
             </button>
           }
         </div>

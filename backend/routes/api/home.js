@@ -1,6 +1,6 @@
 const express = require('express')
 const asyncHandler = require('express-async-handler');
-const { Book, Like } = require('../../db/models');
+const { Book, Like, Playlist } = require('../../db/models');
 const { Op } = require("sequelize");
 
 
@@ -18,6 +18,11 @@ router.get('/search/:searchTerm', asyncHandler(async function(req, res) {
     },
 });
   return res.json(books);
+}));
+
+router.get('/playlists', asyncHandler(async function(req, res) {
+  const playlists = await Playlist.findAll({limit: 12})
+  return res.json(playlists);
 }));
 
 router.get('/:playlistId/likes', asyncHandler(async function(req, res) {

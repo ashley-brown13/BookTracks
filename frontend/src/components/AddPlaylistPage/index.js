@@ -62,10 +62,9 @@ const AddPlaylistPage = () => {
           <div className="add-playlist-input-label-field">
             <label>
                 Description
-                <input
+                <textarea
                   id="add-playlist-description-box"
                   className="add-playlist-input"
-                  type="text"
                   value={description}
                   onChange={(e) => setDescription(e.target.value)}
                   required
