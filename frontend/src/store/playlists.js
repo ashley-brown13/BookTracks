@@ -82,7 +82,6 @@ export const updatePlaylist = (bookId, payload) => async dispatch => {
 export const deletePlaylist = (bookId, playlistId) => async dispatch => {
   const response = await csrfFetch(`/api/books/${bookId}/playlists/${playlistId}/delete`, {
     method: 'DELETE',
-    body: JSON.stringify(playlistId),
   });
   if (response.ok) {
     const playlist = await response.json();

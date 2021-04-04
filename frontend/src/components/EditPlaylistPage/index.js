@@ -16,7 +16,6 @@ const EditPlaylistPage = () => {
   const [description, setDescription] = useState(playlist?.description);
   const [spotifyLink, setSpotifyLink] = useState(playlist?.spotifyLink);
   const [imageURL, setImageURL] = useState(playlist?.imageURL);
-  // const [loaded, setLoaded] = useState(false)
   const [errors, setErrors] = useState([]);
   const { bookId } = useParams();
   const userId = sessionUser.id;
@@ -24,7 +23,6 @@ const EditPlaylistPage = () => {
 
   useEffect(() => {
     dispatch(loadPlaylistForEdit(bookId, playlistId));
-    // setLoaded(true)
   }, []);
 
   useEffect(() => {

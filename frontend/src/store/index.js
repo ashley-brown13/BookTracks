@@ -3,11 +3,13 @@ import thunk from "redux-thunk";
 import sessionReducer from './session'
 import booksReducer from "./books"
 import playlistsReducer from './playlists'
+import likesReducer from './likes'
 
 const rootReducer = combineReducers({
   session: sessionReducer,
   books: booksReducer,
   playlists: playlistsReducer,
+  likes: likesReducer
 });
 
 let enhancer;

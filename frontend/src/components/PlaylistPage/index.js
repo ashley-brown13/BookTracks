@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { useParams, useHistory } from 'react-router-dom';
 import { loadPlaylist, deletePlaylist } from '../../store/playlists';
 import BookPage from '../BookPage'
+import LikeButton from './LikeButton'
 import './PlaylistPage.css';
 
 const PlaylistPage = () => {
@@ -44,8 +45,8 @@ const PlaylistPage = () => {
           <a href={`/books/${bookId}/playlists/${playlistId}/editplaylist`}>
             <button className="edit-playlist-button">Edit Playlist</button>
           </a>
-          <form className="playlist-delete-form">
-            <button type="submit" onSubmit={handleDelete} className="delete-playlist-button">Delete Playlist</button>
+          <form className="playlist-delete-form" onSubmit={handleDelete}>
+            <button type="submit"  className="delete-playlist-button">Delete Playlist</button>
           </form>
         </div>
       )
@@ -63,6 +64,7 @@ const PlaylistPage = () => {
             <div className="playlist-image-container">
               <img src={playlist.imageURL} alt="playlist cover" className="playlist-container-image"></img>
             </div>
+            <LikeButton playlistId={playlistId} bookId={bookId} userId={userId}/>
             {content}
           </div>
           <div className="playlist-details">

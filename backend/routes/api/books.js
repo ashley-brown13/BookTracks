@@ -1,6 +1,6 @@
 const express = require('express')
 const asyncHandler = require('express-async-handler');
-const { Book, Playlist, User } = require('../../db/models');
+const { Book, Playlist, User, Like } = require('../../db/models');
 const { check } = require('express-validator');
 const { handleValidationErrors } = require('../../utils/validation');
 const router = express.Router();
@@ -47,12 +47,18 @@ router.get('/:bookId/playlists/:playlistId', asyncHandler(async function(req, re
   const playlist = await Playlist.findByPk(req.params.playlistId);
   const user = await User.findByPk(playlist.userId)
   const userName = user.username
+  let playlistId =req.params.playlistId
+  // const likes = await Like.findAll({where: {playlistId}})
   return res.json({playlist, userName});
 }));
 
 router.delete('/:bookId/playlists/:playlistId/delete', asyncHandler(async function(req, res) {
-  const { playlistId } = req.body
+  const playlistId = req.params.playlistId;
   const playlist = await Playlist.findByPk(playlistId);
+  const likes = await Like.findAll({where: {playlistId}})
+  await likes.forEach(async (like) => {
+    await like.destroy()
+  })
   await playlist.destroy()
   return res.json(playlist);
 }));
@@ -68,6 +74,28 @@ router.put('/:bookId/playlists/:playlistId/editplaylist', asyncHandler(async fun
   return res.json(playlist);
 }));
 
+// router.get('/:bookId/playlists/:playlistId/likes', asyncHandler(async function(req, res) {
+//   let playlistId = req.params.playlistId
+//   const likes = await Like.findAll({where: {playlistId}});
+//   return res.json(likes);
+// }));
+
+router.post('/:bookId/playlists/:playlistId/:userId', asyncHandler(async function(req, res) {
+  let playlistId = req.params.playlistId;
+  let userId = req.params.userId;
+  await Like.create({ playlistId, userId})
+  const likes = await Like.findAll({where: {playlistId}});
+  return res.json(likes);
+}));
+
+router.delete('/:bookId/playlists/:playlistId/:userId', asyncHandler(async function(req, res) {
+  let playlistId = req.params.playlistId
+  let userId = req.params.userId
+  let like = await Like.findOne({where: {userId, playlistId}})
+  await like.destroy()
+  const likes = await Like.findAll({where: {playlistId}});
+  return res.json(likes);
+}));
 
 
 module.exports = router;

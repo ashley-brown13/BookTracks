@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
-import { searchBooks } from '../../store/books';
 import ProfileButton from './ProfileButton';
 import './Navigation.css';
 import music from '../../images/headphones.png'
@@ -11,16 +10,9 @@ function Navigation({ isLoaded }){
   const sessionUser = useSelector(state => state.session.user);
   const [search, setSearch] = useState("")
   const history = useHistory();
-  // const dispatch = useDispatch();
 
   const handleSearch = async (e) => {
     e.preventDefault();
-    console.log(search)
-    // const payload = {
-    //   search
-    // };
-
-    // let searched = await dispatch(searchBooks(payload));
 
     if (search) {
       history.push(`/search/${search}`);

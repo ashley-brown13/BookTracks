@@ -37,6 +37,9 @@ function App() {
           <Route path="/signup">
             <SignupFormPage />
           </Route>
+          <Route exact path="/books/:bookId/playlists">
+            <PlaylistsPage />
+          </Route>
           <Route exact path="/books/:bookId/playlists/addplaylist">
             <AddPlaylistPage />
           </Route>
@@ -45,9 +48,6 @@ function App() {
           </Route>
           <Route exact path="/books/:bookId/playlists/:playlistId">
             <PlaylistPage />
-          </Route>
-          <Route exact path="/books/:bookId/playlists">
-            <PlaylistsPage />
           </Route>
         </Switch>
       )}
