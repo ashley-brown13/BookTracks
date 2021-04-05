@@ -50,4 +50,6 @@
 
 #add-playlist-description-box {
   height: 120px;
+  font-family: 'myFont',Helvetica,Arial,sans-serif;
+  font-size: 12px;
 }
