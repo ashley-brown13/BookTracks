@@ -29,12 +29,12 @@ module.exports = {
       "updatedAt": new Date()
       },
       {
-      "title": "Dark Places",
-      "author": "Gillian Flynn",
-      "googleLink": "http://books.google.com/books?id=bPCMDQAAQBAJ&hl=&source=gbs_api",
-      "imageURL": "http://books.google.com/books/content?id=bPCMDQAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
-      "createdAt": new Date(),
-      "updatedAt": new Date()
+        "title": "Two-way Street",
+        "author": "Lauren Barnholdt",
+        "googleLink": "https://play.google.com/store/books/details?id=xp1N7SXX-XIC&source=gbs_api",
+        "imageURL": "http://books.google.com/books/content?id=xp1N7SXX-XIC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+        "createdAt": new Date(),
+        "updatedAt": new Date()
       },
       {
       "title": "The Te of Piglet",
@@ -85,10 +85,10 @@ module.exports = {
       "updatedAt": new Date()
       },
       {
-        "title": "Sharp Objects",
-        "author": "Gillian Flynn",
-        "googleLink": "http://books.google.com/books?id=7JCLDQAAQBAJ&hl=&source=gbs_api",
-        "imageURL": "http://books.google.com/books/content?id=7JCLDQAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+        "title": "Breaking Dawn",
+        "author": "Stephenie Meyer",
+        "googleLink": "https://play.google.com/store/books/details?id=kcsqGna7fBIC&source=gbs_api",
+        "imageURL": "http://books.google.com/books/content?id=kcsqGna7fBIC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
         "createdAt": new Date(),
         "updatedAt": new Date()
         },
@@ -189,14 +189,6 @@ module.exports = {
           "updatedAt": new Date()
           },
           {
-          "title": "Two-way Street",
-          "author": "Lauren Barnholdt",
-          "googleLink": "https://play.google.com/store/books/details?id=xp1N7SXX-XIC&source=gbs_api",
-          "imageURL": "http://books.google.com/books/content?id=xp1N7SXX-XIC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
-          "createdAt": new Date(),
-          "updatedAt": new Date()
-          },
-          {
           "title": "Gone Girl",
           "author": "Gillian Flynn",
           "googleLink": "http://books.google.com/books?id=mmWODQAAQBAJ&hl=&source=gbs_api",
@@ -213,14 +205,6 @@ module.exports = {
           "updatedAt": new Date()
           },
           {
-          "title": "Breaking Dawn",
-          "author": "Stephenie Meyer",
-          "googleLink": "https://play.google.com/store/books/details?id=kcsqGna7fBIC&source=gbs_api",
-          "imageURL": "http://books.google.com/books/content?id=kcsqGna7fBIC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
-          "createdAt": new Date(),
-          "updatedAt": new Date()
-          },
-          {
           "title": "New Moon",
           "author": "Stephenie Meyer",
           "googleLink": "https://play.google.com/store/books/details?id=07LTDdpMZfYC&source=gbs_api",
@@ -229,12 +213,28 @@ module.exports = {
           "updatedAt": new Date()
           },
           {
+            "title": "Sharp Objects",
+            "author": "Gillian Flynn",
+            "googleLink": "http://books.google.com/books?id=7JCLDQAAQBAJ&hl=&source=gbs_api",
+            "imageURL": "http://books.google.com/books/content?id=7JCLDQAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+            "createdAt": new Date(),
+            "updatedAt": new Date()
+          },
+          {
           "title": "The Hunger Games",
           "author": "Suzanne Collins",
           "googleLink": "http://books.google.com/books?id=_zSzAwAAQBAJ&hl=&source=gbs_api",
           "imageURL": "http://books.google.com/books/content?id=_zSzAwAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
           "createdAt": new Date(),
           "updatedAt": new Date()
+          },
+          {
+            "title": "Dark Places",
+            "author": "Gillian Flynn",
+            "googleLink": "http://books.google.com/books?id=bPCMDQAAQBAJ&hl=&source=gbs_api",
+            "imageURL": "http://books.google.com/books/content?id=bPCMDQAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+            "createdAt": new Date(),
+            "updatedAt": new Date()
           },
           {
           "title": "Twilight",

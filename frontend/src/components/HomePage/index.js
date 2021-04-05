@@ -35,8 +35,8 @@ const HomePage = () => {
         </div>
       </div>
       <div className="home-playlists-container">
-          <h3 className="header">EXPLORE PLAYLISTS</h3>
-          <div className="playlists-container">
+          <h3 className="header-playlist">EXPLORE PLAYLISTS</h3>
+          <div className="playlists-container-home">
             {playlists && playlists.map((playlist) => (
               <div className="ind-playlist-container" key={playlist.id}>
                 <div className="ind-playlist-image-container">

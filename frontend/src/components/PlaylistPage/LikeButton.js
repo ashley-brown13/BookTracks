@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import { useDispatch, useSelector } from 'react-redux';
 import { loadLikes, addUserLike, removeUserLike } from '../../store/likes';
 
@@ -43,7 +43,7 @@ const LikeButton = ({userId, bookId, playlistId}) => {
         <i className="far fa-heart" ></i>
       </button>
     )
-  } else {
+  } else if(userId) {
     content = (
       <button onClick={submitLike} className="like-button">
         <i className="far fa-heart" ></i>

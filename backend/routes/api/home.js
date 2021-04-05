@@ -21,7 +21,7 @@ router.get('/search/:searchTerm', asyncHandler(async function(req, res) {
 }));
 
 router.get('/playlists', asyncHandler(async function(req, res) {
-  const playlists = await Playlist.findAll({limit: 12})
+  const playlists = await Playlist.findAll({limit: 8})
   return res.json(playlists);
 }));
 
