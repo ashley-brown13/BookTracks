@@ -100,4 +100,36 @@
   background-color: #EEF2F3;
   padding-left: 75px;
   padding-right: 75px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+.footer {
+    background-color: #40A1C3;
+    margin-top: 60px;
+    margin-bottom: -10px;
+    padding: 10px;
+    margin-left: -10px;
+    margin-right: -10px;
+    color: black;
+}
+
+.links {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: black;
+}
+
+a {
+    text-decoration: none;
+    margin-left: 10px;
+    margin-right: 10px;
+    color: black;
+}
+
+.contact-me {
+    text-align: center;
+    margin-top: 0px;
 }
