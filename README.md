@@ -8,8 +8,8 @@ https://book-tracks.herokuapp.com/
 ## Site Wiki
 https://github.com/ashley-brown13/BookTracks/wiki
 
-![Home Page](images/Screen Shot 2021-06-04 at 2.12.36 PM.png)
+![Home Page](https://github.com/ashley-brown13/BookTracks/blob/main/images/Screen%20Shot%202021-06-04%20at%202.12.36%20PM.png)
 
-![Book Page](images/Screen Shot 2021-06-04 at 2.15.14 PM.png)
+![Book Page](https://github.com/ashley-brown13/BookTracks/blob/main/images/Screen%20Shot%202021-06-04%20at%202.15.14%20PM.png)
 
 ![Playlist Page](https://github.com/ashley-brown13/BookTracks/blob/main/images/Screen%20Shot%202021-06-04%20at%202.09.43%20PM.png)
