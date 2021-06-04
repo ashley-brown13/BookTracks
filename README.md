@@ -1,4 +1,4 @@
-# BookTracks
+![Logo and Title]()
 
 BookTracks, a Bandcamp clone, allows users to upload and find their favorite playlists for books. Inspired by my reading of independent books in which authors list the songs they listened to while writing the book, I wanted to design an application where everyone can list the songs they like for novels.
 
@@ -9,3 +9,10 @@ https://book-tracks.herokuapp.com/
 
 ## Site Wiki
 https://github.com/ashley-brown13/BookTracks/wiki
+
+## Technologies
+* Express
+* Bcrypt
+* React
+* Redux
+* Sequelize
