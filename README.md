@@ -31,10 +31,30 @@ Authenticated users can add playlists to books including a title, summary, image
 
 ### Likes
 
-Authenticated users can express their opinion on a playlist through the like feature.
+Authenticated users can express their opinion on a playlist through the like feature. This feature utilizes a heart button, that when clicked, turns red and adds the users like to the database.
+
+```js
+ if(liked){
+    content = (
+      <button onClick={submitUnLike} className="liked-button">
+        <i className="far fa-heart" ></i>
+      </button>
+    )
+  } else if(userId) {
+    content = (
+      <button onClick={submitLike} className="like-button">
+        <i className="far fa-heart" ></i>
+      </button>
+    )
+  }
+```
 
 ### Books
 
 Users can use the search functon to find books they like, and visit the book page where each playlist is located.
 
 ![Book Page](https://github.com/ashley-brown13/BookTracks/blob/main/frontend/public/images/Screen%20Shot%202021-06-04%20at%202.48.29%20PM.png)
+
+##Challenges
+
+One of the challenges I ran into on this project was my editing playlist component. Originally, when I implemented it, the
