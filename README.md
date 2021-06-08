@@ -55,9 +55,9 @@ Users can use the search functon to find books they like, and visit the book pag
 
 ![Book Page](https://github.com/ashley-brown13/BookTracks/blob/main/frontend/public/images/Screen%20Shot%202021-06-04%20at%202.48.29%20PM.png)
 
-## Challenges
+## Challenge
 
-One of the challenges I ran into on this project was my editing playlist functionality. Originally, when I implemented it, the form would not preload the information stored in the database. I kept receiving a console error that stated there were too many re-renders. In order to fix the issue, I used conditionals in the JSX, and utilized useEffect to properly set the data in the fields once the playlist had been fetched.
+The big challenge I ran into on this project was my editing playlist functionality. Originally, when I implemented it, the form would not preload the information stored in the database. I kept receiving a console error that stated there were too many re-renders. In order to fix the issue, I used conditionals in the JSX, and utilized useEffect to properly set the data in the fields once the playlist had been fetched.
 
 ```js
   useEffect(() => {
