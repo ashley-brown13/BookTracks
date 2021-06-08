@@ -17,6 +17,8 @@ function Navigation({ isLoaded }){
     if (search) {
       history.push(`/search/${search}`);
     }
+
+    setSearch("")
   };
 
 

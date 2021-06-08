@@ -55,6 +55,6 @@ Users can use the search functon to find books they like, and visit the book pag
 
 ![Book Page](https://github.com/ashley-brown13/BookTracks/blob/main/frontend/public/images/Screen%20Shot%202021-06-04%20at%202.48.29%20PM.png)
 
-##Challenges
+## Challenges
 
 One of the challenges I ran into on this project was my editing playlist component. Originally, when I implemented it, the
