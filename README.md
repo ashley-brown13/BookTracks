@@ -77,16 +77,7 @@ After cloning the repository to your local machine, follow the instructions belo
 
 >1. In the frontend folder, run `npm install` to install all frontend dependencies for the app.
 >2. In the backend folder, run `npm install` to install all backend dependencies for the app.
->3. Make a .env file with the following file information (add values to empty places)
-    ```js
-    PORT=5000
-    DB_USERNAME=
-    DB_PASSWORD=
-    DB_DATABASE=
-    DB_HOST=localhost
-    JWT_SECRET=
-    JWT_EXPIRES_IN=604800
-    ```
+>3. While in the backend folder, make a .env file based on the .env.example (add values to the empty places).
 >4. Create the user role (matching information above) in psql with `CREATEDB` attribute.
 >5. `npx dotenv sequelize db:create`
 >6. `npx dotenv sequelize db:migrate`
