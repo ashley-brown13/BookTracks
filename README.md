@@ -57,7 +57,20 @@ Users can use the search functon to find books they like, and visit the book pag
 
 ## Challenges
 
-One of the challenges I ran into on this project was my editing playlist component. Originally, when I implemented it, the
+One of the challenges I ran into on this project was my editing playlist functionality. Originally, when I implemented it, the form would not preload the information stored in the database. I kept receiving a console error that stated there were too many re-renders. In order to fix the issue, I used conditionals in the JSX, and utilized useEffect to properly set the data in the fields once the playlist had been fetched.
+
+```js
+  useEffect(() => {
+    dispatch(loadPlaylistForEdit(bookId, playlistId));
+  }, []);
+
+  useEffect(() => {
+    setTitle(playlist?.title)
+    setDescription(playlist?.description)
+    setSpotifyLink(playlist?.spotifyLink)
+    setImageURL(playlist?.imageURL)
+  }, [playlist])
+```
 
 ## Instructions
 After cloning the repository to your local machine, follow the instructions below to start the app:
@@ -65,6 +78,7 @@ After cloning the repository to your local machine, follow the instructions belo
 >1. In the frontend folder, run `npm install` to install all frontend dependencies for the app.
 >2. In the backend folder, run `npm install` to install all backend dependencies for the app.
 >3. Make a .env file with the following file information (add values to empty places)
+    ```js
     PORT=5000
     DB_USERNAME=
     DB_PASSWORD=
@@ -72,6 +86,7 @@ After cloning the repository to your local machine, follow the instructions belo
     DB_HOST=localhost
     JWT_SECRET=
     JWT_EXPIRES_IN=604800
+    ```
 >4. Create the user role (matching information above) in psql with `CREATEDB` attribute.
 >5. `npx dotenv sequelize db:create`
 >6. `npx dotenv sequelize db:migrate`
