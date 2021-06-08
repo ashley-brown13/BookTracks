@@ -58,3 +58,23 @@ Users can use the search functon to find books they like, and visit the book pag
 ## Challenges
 
 One of the challenges I ran into on this project was my editing playlist component. Originally, when I implemented it, the
+
+## Instructions
+After cloning the repository to your local machine, follow the instructions below to start the app:
+
+>1. In the frontend folder, run `npm install` to install all frontend dependencies for the app.
+>2. In the backend folder, run `npm install` to install all backend dependencies for the app.
+>3. Make a .env file with the following file information (add values to empty places)
+    PORT=5000
+    DB_USERNAME=
+    DB_PASSWORD=
+    DB_DATABASE=
+    DB_HOST=localhost
+    JWT_SECRET=
+    JWT_EXPIRES_IN=604800
+>4. Create the user role (matching information above) in psql with `CREATEDB` attribute.
+>5. `npx dotenv sequelize db:create`
+>6. `npx dotenv sequelize db:migrate`
+>7. `npx dotenv sequelize db:seed:all`
+>8. In the backend folder, `npm start` to run the server.
+>9. In the frontend folder, `npm start` to start the react app.
