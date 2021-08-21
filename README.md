@@ -2,7 +2,7 @@
   <img width="300px" src="https://github.com/ashley-brown13/BookTracks/blob/main/frontend/public/images/Screen%20Shot%202021-06-04%20at%202.53.41%20PM.png" alt="title and logo">
 </p>
 
-BookTracks, a Bandcamp clone, allows users to upload and find their favorite playlists for books. Inspired by my reading of independent books in which authors list the songs they listened to while writing the book, I wanted to design an application where everyone can present the songs they like for novels.
+BookTracks, a Bandcamp clone, allows users to upload and find playlists for books they like. Inspired by my reading of independent books in which authors list the songs they listened to while writing the book, I wanted to design an application where everyone can present the songs they like for novels.
 
 ![Home Page](https://github.com/ashley-brown13/BookTracks/blob/main/frontend/public/images/Screen%20Shot%202021-06-04%20at%202.12.36%20PM.png)
 
