@@ -31,7 +31,7 @@ Authenticated users can add playlists to books including a title, summary, image
 
 ### Likes
 
-Authenticated users can express their opinion on a playlist through the like feature. This feature utilizes a heart button, that when clicked, turns red and adds the users like to the database.
+Authenticated users can express their opinion on a playlist through the like feature. This feature utilizes a heart button that, when clicked, turns red and adds the users like to the database.
 
 ```js
  if(liked){
